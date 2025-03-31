@@ -23,10 +23,62 @@ document.addEventListener("DOMContentLoaded", function() {
             errorMessage += 'Please provide a question.\n';
             isValid = false;
         }
-e
+
         if (!isValid) {
             event.preventDefault();  
             alert(errorMessage);  
         }
     });
 });
+
+let currentIndex = 0;
+
+function moveSlide(direction) {
+    const slider = document.querySelector(".games-slider");
+    const slideWidth = document.querySelector(".games-set").offsetWidth;
+    currentIndex += direction;
+
+    if (currentIndex < 0) {
+        currentIndex = 1; 
+    } else if (currentIndex > 1) {
+        currentIndex = 0; 
+    }
+
+    slider.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+}
+
+document.querySelectorAll('.advice-card').forEach(card => {
+    card.addEventListener('click', () => {
+        card.classList.toggle('clicked');
+    });
+});
+
+document.querySelectorAll('.dropdown-btn').forEach(button => {
+    button.addEventListener('click', function() {
+        const dropdown = this.parentElement;
+        dropdown.classList.toggle('active');
+    });
+});
+document.querySelectorAll('.share-btn').forEach(button => {
+    button.addEventListener('click', function() {
+        const videoTitle = this.closest('.video-box').querySelector('h4').textContent;
+        const videoUrl = this.closest('.video-box').querySelector('video').src;
+        alert(`Share this video: ${videoTitle} - ${videoUrl}`);
+    });
+});
+
+document.querySelectorAll('.playlist-collection').forEach(item => {
+    item.addEventListener('click', () => {
+        const playlistInfo = item.querySelector('.playlist-info');
+        playlistInfo.classList.toggle('expanded');
+    });
+});
+
+
+
+
+
+
+
+
+

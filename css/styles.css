@@ -118,7 +118,6 @@ body {
     background-color: #333;
 }
 
-/* Hero Serction Styling */
 /* Hero Section Styling */
 .hero {
     position: relative;
@@ -437,34 +436,33 @@ body {
 
 /* Main: Tips Card Styling */
 .tips-card {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    width: calc(100% - 60px); 
-    max-width: 1500px; 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
+    gap: 20px; 
+    width: 90%; 
+    max-width: 100%; 
     margin: 20px auto;
     padding: 20px;
     background: #F3DCA9;
     outline: 4px solid #E7C783;
+    box-sizing: border-box; 
 }
 
 .tips-text {
-    flex: 1;
     padding-right: 20px;
+    min-width: 300px;
     font-family: 'Playfair', sans-serif;
 }
 
 .tips-video {
-    flex: 1;
-    text-align: right;
     display: flex;
     justify-content: flex-end;
-    align-items: center;
+    text-align: right;
 }
 
 .tips-video video {
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
     border-radius: 5px;
 }
 
@@ -478,19 +476,421 @@ body {
 }
 
 .icon-button:hover {
-    background: rgba(255, 254, 254, 0.6);
-    color: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
 }
 
 .tips-text p {
-    font-family: 'Inter', sans-serif;
-    font-size: 20px;
-    line-height: 1.6;
+    font-size: 18px;
+    line-height: 1.5;
 }
+
 .tips-text h3 {
-    font-family: 'Playfair Display', sans-serif;
-    font-size: 26px;
+    font-size: 24px;
 }
+
+/* Main: Supplementary Advice */
+.supp-advice {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+    align-items: center;
+    justify-content: center;
+    gap: 20px; 
+    padding: 10px;
+    max-width: 95%; 
+    width: 100%;  
+    margin: 0 auto;
+}
+
+.advice-title {
+    grid-column: 1 / -1;
+    text-align: left;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.advice-card {
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%; 
+    position: relative;
+    perspective: 1000px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.advice-card.clicked .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 18px;
+    backface-visibility: hidden;
+    border-radius: 8px;
+}
+
+.card-front {
+    background: #C5D8B8;
+}
+
+.card-back {
+    background: white;
+    color: black;
+    border: 2px solid black;
+    transform: rotateY(180deg);
+}
+
+.supp-advice {
+    gap: 20px;
+}
+
+/* Main: Games Section */
+.games-section {
+    background: #E7C783;
+    margin: 40px;
+    padding: 20px;
+    text-align: center;
+}
+
+.games-title {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.games-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.games-wrapper {
+    overflow: hidden;
+    width: 100%;
+    max-width: 1000px; 
+    padding: 10px 0;
+    position: relative;
+}
+
+.games-slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 200%; 
+}
+
+.games-set {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px;
+    justify-content: center;
+    width: 50%; 
+    flex: 0 0 50%;
+}
+
+.game-card {
+    background: #F3DCA9;
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.game-card:hover {
+    transform: scale(1.1);
+}
+
+.game-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.game-card p {
+    font-size: 16px;
+    margin-top: 8px;
+    font-weight: bold;
+}
+
+.arrow {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+
+.arrow:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.left-arrow {
+    left: 10px;
+}
+
+.right-arrow {
+    right: 10px;
+}
+
+/* Main: More Tips Section */
+.more-tips {
+    margin: 40px;
+    padding: 20px; 
+    outline: 4px solid #C5D8B8;
+}
+
+.dropdown {
+    margin-bottom: 10px; 
+}
+
+.dropdown-btn {
+    background-color: #C5D8B8;
+    color: #333;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.dropdown-btn:hover {
+    background-color: #E7C783;
+
+}
+
+.dropdown-content {
+    display: none;
+    background-color: white;
+    padding: 10px;
+    border: 2px solid #C5D8B8;
+    border-radius: 8px;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.dropdown.active .dropdown-content {
+    display: block;
+}
+/* Main: Playlist Section Layout */
+.playlist-section {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    margin: auto;
+    padding: 20px;
+    flex-wrap: wrap;
+    box-sizing: border-box; 
+}
+
+/* Left Side: Recommended Videos */
+.recommended-videos {
+    flex: 1;
+    background: #4A4A4A;
+    padding: 20px;
+    border-radius: 8px;
+    color: white;
+    box-sizing: border-box; 
+}
+
+.video-box {
+    display: flex;
+    background: white;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.video-box video {
+    width: 150px;
+    height: 100px;
+    border-radius: 8px;
+}
+
+.video-info {
+    padding-left: 10px;
+    color: black;
+}
+
+.share-btn {
+    background: #4A4A4A;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.share-btn:hover {
+    background: #333;
+}
+
+/* User Playlist (Collection Stack) */
+.user-playlist {
+    flex: 1;
+    background: #5A5A5A;
+    padding: 20px;
+    border-radius: 8px;
+    color: white;
+    max-width: 100%; /* Prevent overflow */
+    box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+.playlist-collection {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    cursor: pointer; /* To indicate clickability */
+    flex-direction: row; /* Align items horizontally (default for flex) */
+    justify-content: flex-start; /* Align items to the left */
+}
+
+.playlist-thumbnail {
+    position: relative;
+    width: 160px;
+    height: 90px;
+    margin-bottom: 10px; /* Adjust to reduce unnecessary space */
+}
+
+.playlist-thumbnail .stack-3,
+.playlist-thumbnail .stack-2,
+.playlist-thumbnail .stack-1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+.playlist-thumbnail .stack-3 {
+    background: rgb(100, 100, 100);
+    top: 6px;
+    left: 6px;
+    z-index: 1;
+}
+
+.playlist-thumbnail .stack-2 {
+    background: rgb(130, 130, 130);
+    top: 3px;
+    left: 3px;
+    z-index: 2;
+}
+
+.playlist-thumbnail .stack-1 img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+    position: relative;
+    z-index: 3;
+}
+
+.playlist-badge {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-size: 12px;
+    padding: 4px 6px;
+    border-radius: 3px;
+    z-index: 4;
+}
+
+.playlist-info {
+    color: white;
+    display: none; 
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    margin-top: 20px;
+    max-height: 0;
+    overflow: hidden; 
+    padding: 0;
+}
+
+.playlist-info.expanded {
+    display: block;
+    max-height: 500px; 
+    padding: 10px 0; 
+}
+
+.playlist-info h4 {
+    font-size: 16px;
+    margin-bottom: 4px;
+    padding-bottom: 5px;
+}
+
+.playlist-info span {
+    font-weight: bold;
+}
+
+/* Video Section within Playlist */
+.playlist-videos {
+    margin-top: 20px;
+}
+
+.video-box {
+    display: flex;
+    background: white;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.video-box video {
+    width: 150px;
+    height: 100px;
+    border-radius: 8px;
+}
+
+.video-info {
+    padding-left: 10px;
+    color: black;
+}
+
+.share-btn {
+    background: #4A4A4A;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.share-btn:hover {
+    background: #333;
+}
+
 
 /* Trending News */
 .trending-news {
@@ -778,6 +1178,28 @@ body {
 
     .subscribe {
         width: 100%;
+    }
+    .playlist-section {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .video-box {
+        flex-direction: column;
+    }
+    .video-box video {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .share-btn {
+        width: 100%;
+        margin-top: 10px;
+    }
+    .user-playlist {
+        width: 100%;
+    }
+    .playlist-collection {
+        flex-direction: column;
+        gap: 10px;
     }
 
 /* Desktop View styling */
