@@ -1,3 +1,4 @@
+//Form requirements
 document.addEventListener("DOMContentLoaded", function() {
     const form = document.querySelector('.question-form form');
 
@@ -30,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
-
+//Game slider
 let currentIndex = 0;
 
 function moveSlide(direction) {
@@ -46,19 +47,20 @@ function moveSlide(direction) {
 
     slider.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
 }
-
+//Advice flip card
 document.querySelectorAll('.advice-card').forEach(card => {
     card.addEventListener('click', () => {
         card.classList.toggle('clicked');
     });
 });
-
+//Tips: Dropdown
 document.querySelectorAll('.dropdown-btn').forEach(button => {
     button.addEventListener('click', function() {
         const dropdown = this.parentElement;
         dropdown.classList.toggle('active');
     });
 });
+// Tips: Share link
 document.querySelectorAll('.share-btn').forEach(button => {
     button.addEventListener('click', function() {
         const videoTitle = this.closest('.video-box').querySelector('h4').textContent;
@@ -66,7 +68,7 @@ document.querySelectorAll('.share-btn').forEach(button => {
         alert(`Share this video: ${videoTitle} - ${videoUrl}`);
     });
 });
-
+//Playlist collapse
 document.querySelectorAll('.playlist-collection').forEach(item => {
     item.addEventListener('click', () => {
         const playlistInfo = item.querySelector('.playlist-info');
