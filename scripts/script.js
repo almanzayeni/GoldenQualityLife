@@ -75,12 +75,3 @@ document.querySelectorAll('.playlist-collection').forEach(item => {
         playlistInfo.classList.toggle('expanded');
     });
 });
-
-
-
-
-
-
-
-
-
