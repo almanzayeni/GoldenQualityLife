@@ -8,6 +8,7 @@
         <meta name="author" content="Golden Quality Life">
         <title>Golden Quality Life</title>
         <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     </head>    
 <body>
@@ -46,6 +47,131 @@
         </nav>    
     </header>
     <main>
+        <!--Community Services-->
+        <div class="community-services">
+            <h3>Community Health Services</h3>
+            <div class="services-container">
+                <div class="service-card">
+                    <img src="images/brain.png" alt="brain">
+                    <h2>Service 1</h2>
+                    <p class="service-info">This is where the service information will be placed.</p>
+                    <p class="service-date">Start: MM/DD/YYYY</p>
+                    <p class="service-date">End: MM/DD/YYYY</p>
+                    <button class="learn-more">Learn More</button>
+                </div>
+                <div class="service-card">
+                    <img src="images/screen.png" alt="screening">
+                    <h2>Service 2</h2>
+                    <p class="service-info">This is where the service information will be placed.</p>
+                    <p class="service-date">Start: MM/DD/YYYY</p>
+                    <p class="service-date">End: MM/DD/YYYY</p>
+                    <button class="learn-more">Learn More</button>
+                </div>
+                <div class="service-card">
+                    <img src="images/fitness.png" alt="fitness">
+                    <h2>Service 3</h2>
+                    <p class="service-info">This is where the service information will be placed.</p>
+                    <p class="service-date">Start: MM/DD/YYYY</p>
+                    <p class="service-date">End: MM/DD/YYYY</p>
+                    <button class="learn-more">Learn More</button>
+                </div>
+                <div class="service-card">
+                    <img src="images/group.jpg" alt="group">
+                    <h2>Service 4</h2>
+                    <p class="service-info">This is where the service information will be placed.</p>
+                    <p class="service-date">Start: MM/DD/YYYY</p>
+                    <p class="service-date">End: MM/DD/YYYY</p>
+                    <button class="learn-more">Learn More</button>
+                </div>
+                <div class="service-card">
+                    <img src="images/fruit.jpg" alt="fruit">
+                    <h2>Service 5</h2>
+                    <p class="service-info">This is where the service information will be placed.</p>
+                    <p class="service-date">Start: MM/DD/YYYY</p>
+                    <p class="service-date">End: MM/DD/YYYY</p>
+                    <button class="learn-more">Learn More</button>
+                </div>
+                <div class="service-card">
+                    <img src="images/drink.jpg" alt="drink">
+                    <h2>Service 6</h2>
+                    <p class="service-info">This is where the service information will be placed.</p>
+                    <p class="service-date">Start: MM/DD/YYYY</p>
+                    <p class="service-date">End: MM/DD/YYYY</p>
+                    <button class="learn-more">Learn More</button>
+                </div>
+            </div>
+        </div>
+        <h3 class="section-title">Natural Remedies</h3>
+        <div class="home-remedies">
+            <div class="remedies-card">
+                <img src="images/apple-cider.jpg" alt="apple cider">
+                <div class="remedy-text">
+                    <h3>Remedy Title</h3>
+                    <p>Describe how remedy helps and how to make it</p>
+                    <p><a href="https://example.com" target="_blank"><strong>Why it works?</strong></a></p>
+                </div>
+            </div>
+            <div class="remedies-card">
+                <img src="images/honey.jpg" alt="honey">
+                <div class="remedy-text">
+                    <h3>Remedy Title</h3>
+                    <p>Describe how remedy helps and how to make it</p>
+                    <p><a href="https://example.com" target="_blank"><strong>Why it works?</strong></a></p>
+                </div>
+            </div>
+            <div class="remedies-card">
+                <img src="images/aloe-vera.jpg" alt="aloe vera">
+                <div class="remedy-text">
+                    <h3>Remedy Title</h3>
+                    <p>Describe how remedy helps and how to make it</p>
+                    <p><a href="https://example.com" target="_blank"><strong>Why it works?</strong></a></p>
+                </div>
+            </div>
+            <div class="remedies-card">
+                <img src="images/almond.jpg" alt="almonds">
+                <div class="remedy-text">
+                    <h3>Remedy Title</h3>
+                    <p>Describe how remedy helps and how to make it</p>
+                    <p><a href="https://example.com" target="_blank"><strong>Why it works?</strong></a></p>
+                </div>
+            </div>
+            <div class="remedies-card">
+                <img src="images/almond.jpg" alt="almonds">
+                <div class="remedy-text">
+                    <h3>Remedy Title</h3>
+                    <p>Describe how remedy helps and how to make it</p>
+                    <p><a href="https://example.com" target="_blank"><strong>Why it works?</strong></a></p>
+                </div>
+            </div>
+            <div class="remedies-card">
+                <img src="images/almond.jpg" alt="almonds">
+                <div class="remedy-text">
+                    <h3>Remedy Title</h3>
+                    <p>Describe how remedy helps and how to make it</p>
+                    <p><a href="https://example.com" target="_blank"><strong>Why it works?</strong></a></p>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="local-services">
+            <div class="service-box">
+                <h2>Find Health Services</h2>
+                <p>Enter your ZIP code and select a service to find nearby providers.</p>
+                <form onsubmit="event.preventDefault(); findServices();">
+                    <div class="form-group">
+                        <input type="text" id="zip-code" placeholder="Enter Zip Code" required />
+                        <select id="service-select">
+                            <option value="hospital">Hospitals</option>
+                            <option value="clinic">Clinics</option>
+                            <option value="pharmacy">Pharmacies</option>
+                            <option value="dentist">Dentists</option>
+                        </select>
+                    </div>
+                    <button class="find-button" type="submit">Find Services</button>
+                </form>
+                <div id="map-container"></div>
+            </div>
+        </div>
         
     </main>
     <footer>
@@ -93,6 +219,7 @@
             </div>
         </div>
     </footer>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="scripts/script.js"></script>
 </body>
 </html>
