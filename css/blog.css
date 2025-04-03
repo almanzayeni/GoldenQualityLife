@@ -1,0 +1,343 @@
+body {
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* header styling */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 40px; 
+    background-color: #F3EEE2;
+    position: relative;
+}
+.logo {
+    display: flex;
+    align-items: center;
+}
+.logo img {
+    height: 90px;
+    width: auto;
+}
+
+/* Title and sign in */
+.header-container h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    font-weight: lighter; 
+}
+.sign-in-button {
+    background-color: #4a4a4a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 2px solid #333;
+}
+.sign-in-button:hover {
+    background-color: #333;
+}
+
+/* Navigation styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F3EEE2;
+    padding: 20px 40px; 
+    border-bottom: 2px solid #4a4a4a;
+}
+.nav-left {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+.nav-links a {
+    color: black;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    padding: 10px 20px; 
+    border: 2px solid transparent;
+    border-radius: 5px;
+}
+.nav-links a:hover {
+    background-color: #4a4a4a;
+    color: white;
+    border: 2px solid #4a4a4a;
+    text-decoration: none;
+}
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #4a4a4a;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 2px solid #333;
+}
+.search-bar input {
+    padding: 5px 10px;
+    font-size: 16px;
+    border: none;
+    background-color: #4a4a4a;
+    color: white;
+    border-radius: 20px 0 0 20px;
+}
+.search-bar input::placeholder {
+    color: white;
+}
+.search-bar button {
+    background-color: #4a4a4a;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 0 20px 20px 0;
+}
+.search-bar button img {
+    height: 20px;
+    width: 20px;
+}
+.search-bar button:hover {
+    background-color: #333;
+}
+
+.add-blog-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    margin: auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+label {
+    font-weight: bold;
+    margin: 8px 0;
+    display: block;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    padding: 8px 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#postBtn {
+    background-color: #C5D8B8;
+    color: black;
+}
+
+#saveBtn {
+    background-color: #E7C783;
+    color: black;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* Image Upload Styling */
+label[for="image"] {
+    font-weight: bold;
+    margin: 8px 0;
+    display: block;
+}
+
+input[type="file"] {
+    margin: 5px 0 15px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+
+input[type="file"]:hover {
+    background-color: #e7e7e7;
+}
+
+/* Image Preview Styling */
+#imagePreview {
+    margin-top: 10px;
+    text-align: center;
+}
+
+#imagePreview img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* Footer styling */
+.footer-content {
+    position: relative; 
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px 40px;
+    background-color: #F3EEE2;
+    border-top: 2px solid #4a4a4a;
+    clear:both;
+}
+.footer-logo {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    position: absolute;
+    top: 20px;
+    left: 40px;
+}
+.footer-logo img {
+    height: 75px;
+    width: auto;
+}
+.footer-logo h4 {
+    font-size: 30px;
+    font-weight: normal;
+}
+.social-media {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    min-width: 200px;
+    position: absolute;
+    bottom: 20px; 
+    left: 40px; 
+}
+.social-media h3 {
+    margin-bottom: 10px;
+}
+.social-media a {
+    margin: 5px;
+    display: inline-block;
+}
+.social-media a img {
+    height: 20px;
+    width: 20px;
+}
+.social-media .icons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.useful-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 20px; 
+    flex-grow: 1; 
+    padding-left: 120px; 
+}
+.useful-links h3 {
+    margin-bottom: 10px;
+}
+.useful-links ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+.useful-links ul li {
+    margin: 5px 0;
+}
+.useful-links ul li a {
+    text-decoration: none;
+    color: black;
+}
+.useful-links ul li a:hover {
+    text-decoration: underline;
+}
+.subscribe {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    width: 100%;
+    max-width: 600px; 
+    margin: 0; 
+}
+.subscribe h3 {
+    margin-bottom: 10px;
+    align-self: flex-start; 
+}
+.subscribe p {
+    margin-bottom: 10px;
+    align-self: flex-start; 
+}
+.subscribe form {
+    display: flex;
+    flex-direction: column;
+    width: 100%; 
+}
+.subscribe form label {
+    margin-bottom: 5px;
+    align-self: flex-start; 
+}
+.subscribe form input {
+    padding: 10px; 
+    margin-bottom: 10px;
+    border: 2px solid #4a4a4a;
+    border-radius: 5px;
+    width: 100%; 
+    max-width: 500px; 
+}
+.subscribe form button {
+    background-color: #4a4a4a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%; 
+    max-width: 525px; 
+}
+.subscribe form button:hover {
+    background-color: #333;
+}
+.subscribe form input::placeholder {
+    font-size: 16px; 
+    color: #555; 
+}
+
+/* Hamburger Menu - Hidden by Default on Larger Screens */
+.hamburger-menu {
+    display: none; 
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+.hamburger-menu span {
+    width: 30px;
+    height: 4px;
+    background-color: #333;
+    display: block;
+    border-radius: 2px;
+}
