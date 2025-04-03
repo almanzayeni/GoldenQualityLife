@@ -1539,6 +1539,46 @@ input, select {
     transform: scale(1.05); 
 }
 
+/* Conatct */
+.contact {
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+}
+
+.contact p {
+    margin: 20px;
+    padding-bottom: 5px;
+}
+.underline {
+    max-width: 510px;
+    height: 3px;
+    background-color: #C1A056;
+    margin: 0 auto; 
+}
+
+.map-container {
+    text-align: center;
+    margin: 20px auto;
+}
+
+.map-container h2 {
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 10px;
+}
+
+.underline {
+    max-width: 510px;
+    height: 3px;
+    background-color: #E7C783;
+    margin: 10px auto;
+}
+
+iframe {
+    border: none;
+    width: 90%;
+    height: 550px;
+    margin-top: 10px;
+}
 
 /* Trending News */
 .trending-news {
