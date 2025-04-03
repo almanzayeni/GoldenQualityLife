@@ -1451,7 +1451,7 @@ input, select {
 }
 
 .add-comment textarea {
-    width: 98%;
+    max-width: 20px;
     height: 60px;
     margin: 5px 0;
     padding: 5px;
@@ -1464,6 +1464,81 @@ input, select {
     border-radius: 5px;
     width: 100%;
 }
+
+/* Main: faqs */
+.faqs h2 {
+    text-align: left;
+    margin-left: 20px;
+    font-family: 'Inter', sans-serif;
+}
+.site-help h2 {
+    text-align: left;
+    margin-left: 20px;
+    font-family: 'Inter', sans-serif;
+}
+
+.title-line {
+    max-width: 510px;
+    height: 3px;
+    background-color: #E7C783;
+    margin-left: 20px;
+}
+.line-title{
+    max-width: 100px;
+    height: 3px;
+    background-color: #E7C783;
+    margin-left: 20px;
+}
+.line-seperator {
+    width: 100%;
+    height: 3.5px;
+    background-color: #C5D8B8;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.faq-questions {
+    list-style-position: inside;
+}
+
+.faq-questions li {
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    margin-top: 10px; 
+}
+
+.faq-questions p {
+    margin-bottom: 20px;
+}
+
+/* Main: more help */
+.more-help {
+    background-color: #E7C783;
+    text-align: center;
+    padding: 20px;;
+}
+.more-help h1 {
+    font-size: 44px;
+    padding: 10px;
+}
+.more-help-button {
+    background: #4A4A4A;
+    color: white;
+    border: none;
+    padding: 12px 20px; 
+    margin: 20px;
+    font-size: 22px; 
+    border-radius: 8px; 
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.more-help-button:hover {
+    background: #afadad;
+    color: #000000;
+    transform: scale(1.05); 
+}
+
 
 /* Trending News */
 .trending-news {
