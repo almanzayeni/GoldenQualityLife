@@ -1451,18 +1451,37 @@ input, select {
 }
 
 .add-comment textarea {
-    max-width: 20px;
-    height: 60px;
-    margin: 5px 0;
-    padding: 5px;
+    width: 95%;
+    height: 150px;
+    margin: 10px 0;
+    padding: 10px;
     border-radius: 5px;
+    border: 1px solid #ddd;
+    resize: vertical; 
+    font-size: 16px;
+    line-height: 1.5;
+    box-sizing: border-box;
+    display: block;
 }
 
 #blog-select {
     margin: 5px 0;
     padding: 5px;
+}
+
+#post-comment {
+    background-color: #E7C783;
+    color: black;
+    border: none;
+    padding: 8px 12px;
+    margin-top: 10px;
     border-radius: 5px;
-    width: 100%;
+    cursor: pointer;
+    display: block; 
+}
+
+#post-comment:hover {
+    background-color: #C5D8B8;
 }
 
 /* Main: faqs */
