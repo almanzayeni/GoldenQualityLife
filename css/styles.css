@@ -1245,6 +1245,226 @@ input, select {
     display: none;
 }
 
+/* Main: blogs */
+.blogs {
+    background: #C5D8B8;
+    padding: 20px;
+    width: 100%;
+}
+
+.blog-card {
+    background-color: white;
+    width: 95%;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.blog-card img {
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+}
+
+.blog-content {
+    flex: 1;
+}
+
+.blog-title {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.blog-description {
+    margin: 5px 0;
+    color: #555;
+}
+
+.blog-buttons {
+    display: flex;
+    font-size: 16px;
+    gap: 10px;
+}
+
+.blog-buttons button {
+    background-color: #4a4a4a;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.blog-buttons button:hover {
+    background-color: #7e7b7b;
+}
+.blog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+}
+.add-blog {
+    float: right;
+    margin-bottom: 20px;
+    margin-right: 50px;
+    background-color: #555;
+    font-size: 16px;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.blogs h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+/* share pop up */
+.share-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.share-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.share-options a {
+    display: block;
+    margin: 10px 0;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.share-options a:hover {
+    text-decoration: underline;
+}
+
+.close-modal {
+    margin-top: 15px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.close-modal:hover {
+    background-color: #0056b3;
+}
+
+/* Main: comment */
+.comments {
+    background-color: #4a4a4a;
+    color: white;
+    padding: 20px;
+}
+
+.user-comment h4 {
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+}
+
+.comment-blog-title {
+    font-family: 'Inter', sans-serif;
+    font-style: italic;
+}
+
+.comment-p {
+    font-family: 'Inter', sans-serif;
+    text-indent: 20px;
+}
+/* reply and reaction */
+.reply, .thumbs-up, #post-comment {
+    background-color: #E7C783;
+    color: black;
+    border: none;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.reply:hover, .thumbs-up:hover, #post-comment:hover {
+    background-color: #C5D8B8;
+}
+
+.thumbs-up {
+    background-color: white;
+}
+
+.thumbs-up-active {
+    background-color: #C5D8B8;
+}
+
+.reply-box {
+    margin-top: 10px;
+}
+
+.reply-field {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+    border-radius: 5px;
+}
+
+.replies {
+    margin-top: 10px;
+    padding-left: 20px;
+    border-left: 2px solid #C5D8B8;
+}
+
+.user-reply {
+    margin-top: 5px;
+}
+
+.user-reply h4 {
+    font-weight: bold;
+    margin: 0;
+}
+
+.user-reply p {
+    margin: 2px 0;
+}
+
+.add-comment {
+    background-color: #4A4A4A;
+    padding: 20px;
+    color: white;
+}
+
+.add-comment textarea {
+    width: 98%;
+    height: 60px;
+    margin: 5px 0;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#blog-select {
+    margin: 5px 0;
+    padding: 5px;
+    border-radius: 5px;
+    width: 100%;
+}
+
 /* Trending News */
 .trending-news {
     background-color: #E7C783;

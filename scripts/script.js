@@ -130,3 +130,125 @@ async function findServices() {
         alert("Failed to load services. Try again later.");
     }
 }
+
+//Share pop up
+document.addEventListener("DOMContentLoaded", () => {
+    // Select all share buttons
+    const shareButtons = document.querySelectorAll(".share-btn");
+
+    shareButtons.forEach(button => {
+        button.addEventListener("click", (e) => {
+            // Create the share modal
+            const shareModal = document.createElement("div");
+            shareModal.classList.add("share-modal");
+            shareModal.innerHTML = `
+                <div class="share-content">
+                    <h4>Share this blog</h4>
+                    <div class="share-options">
+                        <a href="https://www.facebook.com/sharer/sharer.php" target="_blank">Facebook</a>
+                        <a href="https://twitter.com/intent/tweet" target="_blank">Twitter</a>
+                        <a href="sms:">Messages</a>
+                        <a href="mailto:?subject=Check out this blog">Email</a>
+                    </div>
+                    <button class="close-modal">Close</button>
+                </div>
+            `;
+            document.body.appendChild(shareModal);
+
+            // Close modal when clicking the close button
+            shareModal.querySelector(".close-modal").addEventListener("click", () => {
+                shareModal.remove();
+            });
+        });
+    });
+});
+
+//Blog reply and comment
+document.addEventListener("DOMContentLoaded", function() {
+    const postCommentButton = document.getElementById("post-comment");
+    const commentInput = document.getElementById("comment-input");
+    const blogSelect = document.getElementById("blog-select");
+    const commentList = document.getElementById("comment-list");
+
+    // Add a new comment
+    postCommentButton.addEventListener("click", function() {
+        const commentText = commentInput.value.trim();
+        const selectedBlog = blogSelect.value;
+
+        if (commentText) {
+            // Create new comment element
+            const newComment = document.createElement("div");
+            newComment.classList.add("user-comment");
+            newComment.innerHTML = `
+                <h4>New User</h4>
+                <p class="comment-blog-title">Blog: ${selectedBlog}</p>
+                <p class="comment-p">${commentText}</p>
+                <div class="comment-reaction">
+                    <button class="reply">Reply</button>
+                    <button class="thumbs-up">👍</button>
+                </div>
+                <hr>
+            `;
+            commentList.appendChild(newComment);
+
+            // Clear input fields
+            commentInput.value = "";
+        } else {
+            alert("Please enter a comment.");
+        }
+    });
+
+    // Handle all button clicks for replies and thumbs-up
+    document.addEventListener("click", function(event) {
+        const target = event.target;
+
+        // Handle reply button click
+        if (target.classList.contains("reply")) {
+            const comment = target.closest(".user-comment");
+            if (!comment.querySelector(".reply-box")) {
+                const replyBox = document.createElement("div");
+                replyBox.classList.add("reply-box");
+                replyBox.innerHTML = `
+                    <textarea class="reply-field" placeholder="Write your reply..."></textarea>
+                    <button class="reply-submit">Submit</button>
+                `;
+                comment.appendChild(replyBox);
+            }
+        }
+
+        // Handle submit reply button click
+        if (target.classList.contains("reply-submit")) {
+            const replyBox = target.closest(".reply-box");
+            const replyText = replyBox.querySelector(".reply-field").value.trim();
+
+            if (replyText) {
+                const comment = target.closest(".user-comment");
+                const repliesContainer = comment.querySelector(".replies") || document.createElement("div");
+                repliesContainer.classList.add("replies");
+
+                const replyDiv = document.createElement("div");
+                replyDiv.classList.add("user-reply");
+                replyDiv.innerHTML = `
+                    <h4>Your Reply</h4>
+                    <p class="comment-p">${replyText}</p>
+                `;
+
+                repliesContainer.appendChild(replyDiv);
+                comment.appendChild(repliesContainer);
+
+                // Clear the reply field
+                replyBox.querySelector(".reply-field").value = "";
+            }
+        }
+
+        // Handle thumbs up button click
+        if (target.classList.contains("thumbs-up")) {
+            target.classList.toggle("thumbs-up-active");
+        }
+    });
+});
+
+
+
+
+
