@@ -1428,7 +1428,7 @@ input, select {
 .replies {
     margin-top: 10px;
     padding-left: 20px;
-    border-left: 2px solid #C5D8B8;
+    border-left: 2px solid c;
 }
 
 .user-reply {

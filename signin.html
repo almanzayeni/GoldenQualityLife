@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GQL | Sign In</title>
+    <link rel="icon" type="image/png" href="images/GQL_logo.png">
+    <link rel="stylesheet" href="CSS/signin.css">
+</head>
+<body>
+    <div class="container">
+        <h2 class="header">Sign In</h2>
+        <form action="#" method="POST">
+            <div class="input-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <div class="password-container">
+                    <input type="password" id="password" name="password" required>
+                    <button type="button" id="toggle-password" onclick="togglePassword()">👁️</button>
+                </div>
+            </div>
+            <button type="button" class="signin-button" onclick="validateForm()">Sign In</button>
+        </form>
+        <a href="#" id="forgot-password-link">Forgot Password?</a>
+        
+        <!-- Forgot Password Modal -->
+        <div id="forgot-password-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h3>Forgot Password</h3>
+                <p>Enter your email address to receive a confirmation link.</p>
+                <form id="forgot-password-form" onsubmit="sendConfirmationEmail(event)">
+                    <input type="email" id="reset-email" placeholder="Enter your email" required>
+                    <button type="submit" class="signin-button">Submit</button>
+                </form>
+                <p id="confirmation-message"></p>
+            </div>
+        </div>
+        
+        <p><a href="signup.html">Don't have an account? Sign Up</a></p>
+    </div>
+
+    <script src="scripts/signin.js"></script>
+</body>
+</html>
+
+
