@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GQL | Create an Account</title>
+    <link rel="icon" type="image/png" href="images/GQL_logo.png">
+    <link rel="stylesheet" href="CSS/signin.css">
+</head>
+<body>
+    <div class="container">
+        <h2 class="header">Create an Account</h2>
+        <form action="confirmation.html" method="POST">
+            <div class="input-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="input-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required pattern="(?=.*[0-9])(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{8,}">
+                <small>Password must be at least 8 characters long, include at least one number and one symbol.</small>
+            </div>
+            <div class="input-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+            </div>
+            <div class="input-group">
+                <label for="password-hint">Password Hint</label>
+                <input type="text" id="password-hint" name="password-hint">
+            </div>
+            <button type="button" class="signin-button" onclick="validateForm()">Sign Up</button>
+        </form>
+        <p><a href="signin.html">Already have an Account? Sign In</a></p>
+    </div>
+    <script src="scripts/signup.js"></script>
+</body>
+</html>
