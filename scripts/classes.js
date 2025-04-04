@@ -104,5 +104,43 @@ function moveSlide(direction, sliderId) {
     slider.style.transform = `translateX(${offset}%)`;
 }
 
+//Register for class button message
+document.addEventListener("DOMContentLoaded", function () {
+    const modal = document.getElementById("registrationModal");
+    const closeModalButton = document.querySelector(".close-btn");
+
+    // Function to open the modal
+    function openModal() {
+        modal.style.display = "block";
+    }
+
+    // Function to close the modal
+    function closeModal() {
+        modal.style.display = "none";
+    }
+
+    // Get all register buttons
+    const registerButtons = document.querySelectorAll(".register-btn");
+
+    // Add event listener to each register button
+    registerButtons.forEach(button => {
+        button.addEventListener("click", openModal);
+    });
+
+    // Add event listener for the close button
+    closeModalButton.addEventListener("click", closeModal);
+
+    // Close the modal if the user clicks outside of it
+    window.addEventListener("click", function(event) {
+        if (event.target == modal) {
+            closeModal();
+        }
+    });
+});
+
+
+
+
+
 
 
