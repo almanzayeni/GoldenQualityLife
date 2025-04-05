@@ -108,7 +108,7 @@ body {
 /* Hero Section Styling */
 .hero {
     position: relative;
-    background-image: url('/images/hero.png');
+    background-image: url('images/hero.png');
     background-size: cover;
     background-position: center;
     height: 400px; 
