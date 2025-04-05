@@ -138,6 +138,36 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+//Search input
+document.getElementById("searchButton").addEventListener("click", function () {
+    const query = document.getElementById("searchInput").value.toLowerCase();
+
+    if (!query.trim()) {
+        alert("Please enter a search term.");
+        return;
+    }
+
+    const keywordMap = {
+        "tips.html": ["tip", "tips", "advice", "games", "activities", "video"],
+        "classes.html": ["class", "classes", "event", "events", "date", "calendar", "register"],
+        "resources.html": ["service", "remedy", "remedies", "recipe", "lookup", "services near me"],
+        "help.html": ["help", "how", "when", "where", "question", "what", "assistance"],
+        "discussions.html": ["discussion", "discussions", "blog", "comment", "comments", "read blog", "share"],
+        "contact.html": ["more help", "contact", "phone", "address", "hours"],
+        "signin.html": ["sign up", "sign in", "password", "log in"]
+    };
+
+    for (const [page, keywords] of Object.entries(keywordMap)) {
+        for (const keyword of keywords) {
+            if (query.includes(keyword)) {
+                window.location.href = page;
+                return;
+            }
+        }
+    }
+
+    alert("Sorry, no relevant page found for your search.");
+});
 
 
 
