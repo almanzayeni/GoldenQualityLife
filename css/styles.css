@@ -154,7 +154,7 @@ body {
 /* Hero Countdown */
 .hero-timer {
     position: relative;
-    background: url("/images/timer.png");
+    background: url("../images/timer.png");
     color: white;
     text-align: center;
     padding: 80px 20px;
